@@ -15,12 +15,13 @@
 /log/*.log
 /tmp
 
-# doc/
+doc/
 *.swp
 *~
 .project
 .DS_Store
 .idea
+bundler_stubs/
 
 *.rbc
 *.sassc
@@ -40,3 +41,5 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .project
+# Ignore application configuration
+/config/application.yml

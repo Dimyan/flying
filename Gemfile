@@ -4,6 +4,32 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
+gem 'haml-rails'
+gem 'figaro', '>= 0.5.3'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'rails4'
+#gem 'activeadmin'
+
+
+group :test, :development do
+  gem 'rspec-rails', '>= 2.12.2'
+  gem 'factory_girl_rails', '>= 4.2.0'
+end
+
+group :development do
+  gem 'better_errors', '>= 0.3.2'
+  gem 'quiet_assets', '>= 1.0.1'
+  #gem 'letter_opener'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'launchy', '>= 2.1.2'
+  #gem 'capybara', '>= 2.0.2'
+  gem 'capybara', '>=2.1.0.beta1'
+  gem 'selenium-webdriver', '>=2.0'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -12,8 +38,7 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0.beta1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-
+  gem 'therubyracer', platforms: :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -36,3 +61,4 @@ gem 'jbuilder', '~> 1.0.1'
 
 # To use debugger
 # gem 'debugger'
+
