@@ -7,8 +7,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'figaro', '>= 0.5.3'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'rails4'
-#gem 'activeadmin'
-
+gem 'bootstrap-sass', '~> 2.3.1.0'
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.12.2'
@@ -26,7 +25,6 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'launchy', '>= 2.1.2'
-  #gem 'capybara', '>= 2.0.2'
   gem 'capybara', '>=2.1.0.beta1'
   gem 'selenium-webdriver', '>=2.0'
 end
