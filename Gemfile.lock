@@ -84,7 +84,7 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    ffi (1.7.0)
+    ffi (1.8.1)
     figaro (0.6.3)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -184,8 +184,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.1.1)
-      coffee-rails
     tzinfo (0.3.37)
     uglifier (2.0.1)
       execjs (>= 0.3.0)
@@ -221,5 +219,4 @@ DEPENDENCIES
   sass-rails (~> 4.0.0.beta1)
   selenium-webdriver (>= 2.0)
   therubyracer
-  turbolinks
   uglifier (>= 1.0.3)
