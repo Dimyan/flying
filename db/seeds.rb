@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts 'DEFAULT USERS'
+user = User.where(email: ENV['ADMIN_EMAIL'].dup).first_or_create(name: ENV['ADMIN_NAME'].dup,
+                                                                 email: ENV['ADMIN_EMAIL'].dup,
+                                                                 password: ENV['ADMIN_PASSWORD'].dup,
+                                                                 password_confirmation: ENV['ADMIN_PASSWORD'].dup,
+                                                                 confirmed_at: DateTime.now)
+puts 'user: ' << user.name

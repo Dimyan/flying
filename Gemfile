@@ -17,7 +17,7 @@ end
 group :development do
   gem 'better_errors', '>= 0.3.2'
   gem 'quiet_assets', '>= 1.0.1'
-  #gem 'letter_opener'
+  gem 'letter_opener'
 end
 
 group :test do
