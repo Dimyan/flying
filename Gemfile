@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '~> 4.0.0.beta1'
 
 gem 'pg'
 gem 'haml-rails'
 gem 'figaro', '>= 0.5.3'
-gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'rails4'
+gem 'devise', '~> 3.0.0.rc'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 
 group :test, :development do
