@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        name: "Отображаемое имя"
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+    errors:
+      models:
+        user:
+          blank: "не может быть пустым"

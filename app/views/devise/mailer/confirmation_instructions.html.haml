@@ -1,4 +1,8 @@
 %p
-  Welcome #{@email}!
-%p You can confirm your account email through the link below:
-%p= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+  Здравствуйте, #{@resource.name}!
+%p Этот адрес электронной почты был указан при регистрации на сайте <a href="http://muhovyaz.ru/">Муховяз.RU</a>
+%p Для подтверждения реальности email адреса перейдите, пожалуйста, по ссылке:
+%p= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+%p Если это сообщение пришло Вам по ошибке, просто проигнорируйте его.
+%p Спасибо!
+%p С уважением, <a href="http://muhovyaz.ru/">Муховяз.RU</a>

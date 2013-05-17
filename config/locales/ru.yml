@@ -1,0 +1,5 @@
+ru:
+  resource:
+    user: Пользователь
+  resource_name:
+    edit_user: Пользователь
