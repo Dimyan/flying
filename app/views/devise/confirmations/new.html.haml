@@ -1,6 +1,7 @@
 - provide(:title, 'Повторная отправка письма с подтверждением e-mail')
 
-%h2 Повторная отправка письма с подтверждением e-mail
+.page-header
+  %h2 Повторная отправка письма с подтверждением e-mail
 = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
   = devise_error_messages!
   %div
