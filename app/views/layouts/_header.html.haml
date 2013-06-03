@@ -7,6 +7,9 @@
           %li
             = link_to root_path do
               %i.icon-home.icon-white
+          %li= link_to "Оплата и доставка",   page_path("payment-delivery")
+          %li= link_to "Контакты", page_path("contact")
+          %li= link_to "О нас", page_path("about")
 
           - if user_signed_in?
             %li
