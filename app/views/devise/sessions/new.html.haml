@@ -3,17 +3,16 @@
 .page-header
   %h2 Авторизация
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
+  .field
     = f.label :email
-    %br
     = f.email_field :email, :autofocus => true
-  %div
+  .field
     = f.label :password
-    %br
     = f.password_field :password
   - if devise_mapping.rememberable?
     %div
       = f.check_box :remember_me
       = f.label :remember_me
-  %div= f.submit "Войти"
+  .actions
+    = f.submit "Войти"
 = render "devise/shared/links"

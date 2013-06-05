@@ -4,9 +4,9 @@
   %h2 Повторная отправка письма с подтверждением e-mail
 = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
   = devise_error_messages!
-  %div
+  .field
     = f.label :email
-    %br
     = f.email_field :email, :autofocus => true
-  %div= f.submit "Отправить повторно письмо с подтверждением"
+  .actions
+    = f.submit "Отправить повторно письмо с подтверждением"
 = render "devise/shared/links"

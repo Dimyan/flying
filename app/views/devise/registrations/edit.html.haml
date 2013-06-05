@@ -4,11 +4,11 @@
   %h2 Редактирование профиля
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
   = devise_error_messages!
-  %div
+  .field
     = f.label :name
     %br
     = f.text_field :name, :autofocus => true
-  %div
+  .field
     = f.label :email
     %br
     = f.email_field :email
@@ -16,21 +16,22 @@
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Ожидание подтверждения для: #{resource.unconfirmed_email}
-  %div
+  .field
     = f.label :password
     %i (не заполняйте если не собираетесь менять)
     %br
     = f.password_field :password, :autocomplete => "off"
-  %div
+  .field
     = f.label :password_confirmation
     %br
     = f.password_field :password_confirmation
-  %div
+  .field
     = f.label :current_password
     %i (необходим ваш текущий пароль, чтобы подтвердить изменения)
     %br
     = f.password_field :current_password
-  %div= f.submit "Сохранить"
+  .actions
+    = f.submit "Сохранить"
 %h3 Удаление моего аккаунта
 %p
   #{button_to "Удалить аккаунт", registration_path(resource_name), :data => { :confirm => "Вы уверены?" }, :method => :delete}
