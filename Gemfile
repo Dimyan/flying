@@ -9,6 +9,9 @@ gem 'figaro', '>= 0.5.3'
 gem 'devise', '~> 3.0.0.rc'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'friendly_id', '~> 5.0.0.alpha1', git: 'https://github.com/FriendlyId/friendly_id.git'
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
+
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.12.2'
