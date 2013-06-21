@@ -15,3 +15,13 @@
 // require turbolinks
 //= require bootstrap
 //= require_tree .
+
+//$(document).ready(function() {
+//    $('#cart > .heading a').click(function(){
+//        $('#cart').addClass('active');
+//    })
+//    //$("#cart .heading a").live('click', function() {
+//    //    $('#cart').addClass('active');
+//    //});
+//});
+

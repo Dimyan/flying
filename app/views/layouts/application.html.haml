@@ -6,21 +6,27 @@
     %title= content_for?(:title) ? yield(:title) + " : Муховяз.RU" : "Муховяз.RU"
     %meta{:name => "description", :content => content_for?(:description) ? yield(:description) : "Муховяз.RU"}
     %meta{:name => "author", :content => "Muhovyaz"}
-    %meta{:name => "copyright", :content =>"Copyright Dmitry Nikifortsev #{Time.now.year}. All Rights Reserved."}
-    = stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %meta{:name => "copyright", :content =>"Copyright 2009-#{Time.now.year} Dmitry Nikifortsev. All Rights Reserved."}
+    -# = stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true
+    -# = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
     /[if lt IE 9]
       %script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
 
     = yield(:head)
 
-  %body{:class => "#{controller_name} #{action_name}"}
-    -# Заголовок страницы
-    = render 'layouts/header'
+  %body{:class => "#{controller_name} #{action_name}", 'data-spy'=>"scroll", 'data-target'=>".navbar"}
+    .container
+      -# Заголовок страницы
+      = render 'layouts/header'
+      -# Меню навигации
+      = render 'layouts/navbar'
 
     -# Контейнер основного контента
-    #main{:role => "main"}
+    /
+      #main{:role => "main"}
       .container
         .content
           .row
