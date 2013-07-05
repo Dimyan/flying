@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show]
+  #add_crumb :page, only: "show"
 
   # GET /pages/1
   # GET /pages/1.json
@@ -10,6 +11,7 @@ class PagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_page
       @page = Page.friendly.find(params[:id])
+      add_crumb @page.title
       render 'shared/404', :status => 404 if @page.nil?
     end
 

@@ -24,7 +24,7 @@
 /*ul.nav li {
   display: inline;
 }*/
-#flash_notice, #flash_alert {
+#flash_notice, #flash_alert,#flash_error {
   padding: 5px 8px;
   margin: 10px 0;
 }
@@ -33,6 +33,10 @@
   border: solid 1px #6C6;
 }
 #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+#flash_error {
   background-color: #FCC;
   border: solid 1px #C66;
 }

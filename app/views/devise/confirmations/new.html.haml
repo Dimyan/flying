@@ -1,12 +1,19 @@
 - provide(:title, 'Повторная отправка письма с подтверждением e-mail')
 
 .page-header
-  %h2 Повторная отправка письма с подтверждением e-mail
-= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    = f.email_field :email, :autofocus => true
-  .actions
-    = f.submit "Отправить повторно письмо с подтверждением"
-= render "devise/shared/links"
+  %h1 Повторная отправка подтверждения
+= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), html: {method: :post, class: 'form-horizontal'}) do |f|
+  .hidden= devise_error_messages!
+  .control-group
+    = f.label :email, class: 'control-label'
+    .controls
+      .input-prepend
+        %span.add-on
+          %i.icon-envelope
+        = f.email_field :email, :autofocus => true
+  .control-group
+    .controls
+      = f.submit "Отправить", class: "btn btn-primary"
+  .control-group
+    .controls
+      = render "devise/shared/links"

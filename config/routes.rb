@@ -6,7 +6,13 @@ Flying::Application.routes.draw do
 
 
 
-  devise_for :users
+  devise_for :users,
+             :controllers  => {
+                 :registrations   => 'my_devise/registrations',
+                 :sessions        => 'my_devise/sessions',
+                 :confirmations   => 'my_devise/confirmations',
+                 :passwords       => 'my_devise/passwords'
+             }
   resources :users
 
   # Статические страницы

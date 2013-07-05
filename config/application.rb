@@ -27,5 +27,9 @@ module Flying
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.filter_parameters += [:password, :password_confirmation]
+
+    # отмена обвертывания ошибочного тега в <div class="field_with_errors">
+    # config.action_view.field_error_proc = Proc.new { |html_tag, instance| "#{html_tag}".html_safe}
+
   end
 end

@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
+//= require turbolinks
 //= require bootstrap
 //= require_tree .
 
@@ -24,4 +24,3 @@
 //    //    $('#cart').addClass('active');
 //    //});
 //});
-

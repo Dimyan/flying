@@ -24,6 +24,20 @@
       -# Меню навигации
       = render 'layouts/navbar'
 
+      .breadcrumb
+        = render_crumbs  separator: ' / '
+
+      .container
+        .content
+          .row
+            .span3
+
+            .span9
+              = render 'layouts/messages'
+              = yield
+
+
+
     -# Контейнер основного контента
     /
       #main{:role => "main"}

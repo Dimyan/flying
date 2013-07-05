@@ -7,11 +7,14 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to root_path,{'class' => 'brand'}  do
-            %i.icon-home.icon-white
+          -#= link_to root_path,{'class' => 'brand', class="active"}  do
+            -#%i.icon-home.icon-white
 
           .nav-collapse.collapse
             %ul.nav
+              %li.active
+                = link_to root_path  do
+                  %i.icon-home.icon-white
               %li.divider-vertical
               %li= link_to 'Каталог', '#'
               %li.divider-vertical
@@ -31,3 +34,5 @@
                     = link_to 'Выход', '#'
             %form.navbar-search.pull-right
               %input.search-query{:placeholder => "Поиск...", :type => "text"}
+
+

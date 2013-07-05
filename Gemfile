@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.0.beta1'
+gem 'rails', '~> 4.0.0'
 
 gem 'pg'
 gem 'haml-rails'
 gem 'figaro', '>= 0.5.3'
 gem 'devise', '~> 3.0.0.rc'
 gem 'bootstrap-sass', '~> 2.3.1.0'
-gem 'friendly_id', '~> 5.0.0.alpha1', git: 'https://github.com/FriendlyId/friendly_id.git'
+gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id'
 #gem 'friendly_id', '~> 5.0.0.alpha1'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
+gem 'crummy', '~> 1.7.2'
+gem 'simple_form', '~> 3.0.0.rc'
 
 
 group :test, :development do
@@ -37,8 +39,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', platforms: :ruby
@@ -48,10 +50,10 @@ end
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.0.1'
+gem 'jbuilder', '~> 1.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

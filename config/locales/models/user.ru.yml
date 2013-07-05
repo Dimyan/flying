@@ -5,9 +5,11 @@ ru:
     attributes:
       user:
         name: "Отображаемое имя"
+        email: "E-mail"
         password: Пароль
         password_confirmation: Подтверждение пароля
         current_password: Текущий пароль
+        remember_me: Запомнить меня
     errors:
       models:
         user:

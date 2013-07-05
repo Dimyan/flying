@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  add_crumb "Главная", '/', link_html_options: {id: "bh-home"}
+
   protected
 
   def configure_permitted_parameters
