@@ -1,16 +1,22 @@
 - provide(:title, 'Изменение пароля')
 
 .page-header
-  %h2 Изменение пароля
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
+  %h1 Изменение пароля
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, class: 'form-horizontal' }) do |f|
   = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "Новый пароль"
-    = f.password_field :password, :autofocus => true
-  .field
-    = f.label :password_confirmation, "Подтвердите новый пароль"
-    = f.password_field :password_confirmation
-  .actions
-    = f.submit "Изменить пароль"
-= render "devise/shared/links"
+  = f.input :password, :label => "Новый пароль", :wrapper => :prepend do
+    %span.add-on
+      %i.icon-lock
+    = f.input_field :password, :type => "password", :autofocus => true
+
+  = f.input :password_confirmation, :required => true, :label => "Подтвердите новый пароль", :wrapper => :prepend do
+    %span.add-on
+      %i.icon-lock
+    = f.input_field :password_confirmation, :type => "password"
+
+  .control-group
+    .controls
+      = f.button :submit, "Изменить пароль", :class => "btn-primary"
+  .control-group
+    .controls
+      = render "devise/shared/links"

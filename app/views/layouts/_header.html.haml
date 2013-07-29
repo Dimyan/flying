@@ -9,10 +9,10 @@
             = link_to "Здравствуйте, #{current_user.name}", edit_user_registration_path
           %li.divider-vertical
           %li
-            = link_to 'Выход', destroy_user_session_path, :method=>'delete'
+            = link_to "Выход", destroy_user_session_path, :method=>'delete'
           %li.divider-vertical
           %li#fat-menu.dropdown
-            %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               Account
               %b.caret
             %ul.dropdown-menu
@@ -23,26 +23,14 @@
                 = link_to 'Выход', destroy_user_session_path, :method=>'delete'
         - else
           %li
-            = link_to 'Регистрация', new_user_registration_path, class: 'sys-link'
+            = link_to "Регистрация", new_user_registration_path, class: "sys-link"
           %li.divider-vertical
           %li.dropdown
-            %a.dropdown-toggle{'data-toggle' => 'dropdown', 'class' => 'sys-link', :href => '#'}
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :class => "sys-link", :id=>"loginButton", :href => "#"}
               Войти
               %b.caret
             .dropdown-menu.right
-              = form_tag user_session_path do
-                .input-prepend
-                  %span.add-on
-                    %i.icon-envelope
-                  = email_field_tag 'user[email]',nil,{:placeholder => "E-mail"}
-                .input-prepend
-                  %span.add-on
-                    %i.icon-lock
-                  = password_field_tag 'user[password]',nil,{:placeholder => "Пароль"}
-                = check_box_tag 'user[remember_me]'
-                = label_tag 'user[remember_me]', 'Запомнить меня'
-                = submit_tag 'Войти', class: "btn btn-primary"
-                = link_to "Напомнить пароль", new_password_path('user')
+              = render 'layouts/sessions_menu_form'
             -#= link_to 'Войти', new_user_session_path
     #cart.pull-right
       .heading.pull-right

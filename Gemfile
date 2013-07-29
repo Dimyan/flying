@@ -6,14 +6,20 @@ gem 'rails', '~> 4.0.0'
 gem 'pg'
 gem 'haml-rails'
 gem 'figaro', '>= 0.5.3'
-gem 'devise', '~> 3.0.0.rc'
+gem 'devise', '~> 3.0.0'
 gem 'bootstrap-sass', '~> 2.3.1.0'
-gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id'
+#gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id'
 #gem 'friendly_id', '~> 5.0.0.alpha1'
+gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'master'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
 gem 'crummy', '~> 1.7.2'
+#gem 'formtastic', '~> 2.3.0.rc2'
+#gem 'formtastic-bootstrap'
+
 gem 'simple_form', '~> 3.0.0.rc'
+#gem 'client_side_validations', '~> 3.2'
+#gem 'client_side_validations-simple_form', '~> 2.0'
 
 
 group :test, :development do

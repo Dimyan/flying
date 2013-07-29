@@ -71,12 +71,6 @@ textarea {resize: vertical;}
   color: #FFFFFF;
 }
 
-/* Remember me checkbox */
-#user_remember_me{
-  float: left;
-  margin-right: 10px;
-}
-
 /*.content {
   background-color: #eee;
   padding: 20px;
@@ -166,6 +160,23 @@ a, a:visited, a b  {
   }
 }
 
+/*  Првильное расположение кнопки "запомнить" при авторизации */
+.users_sign_in_form_actions,
+.user_form_actions {
+  .btn-primary{
+    float: left;
+  }
+  .remember_me{
+    margin-left: 80px;
+  }
+  /* Remember me checkbox */
+  #user_remember_me{
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+
 
 /*form {
   display: inline;
@@ -224,21 +235,53 @@ header{
     }
 
     form {
-      margin: 0;
+      //margin: 0;
 
-      input.btn {
+      /*input.btn {
         clear: left;
         width: 100%;
         height: 32px;
         font-size: 13px;
-      }
+      }*/
       a {
         font-size: 8pt;
       }
     }
 
+    /* Login Form */
+    #loginForm {
+      border:1px solid #899caa;
+      border-radius:3px 0 3px 3px;
+      -moz-border-radius:3px 0 3px 3px;
+      //margin-top:-1px;
+      margin: 0;
+      background:#d2e0ea;
+      padding:6px;
+
+      fieldset {
+        margin:0 0 12px 0;
+        display:block;
+        border:0;
+        padding:0;
+      }
+      fieldset#body {
+        background:#fff;
+        border-radius:3px;
+        -moz-border-radius:3px;
+        padding:10px 13px;
+        margin:0;
+      }
+
+      /* Forgot your password */
+      span#forgot_psw {
+        text-align:center;
+        display:block;
+        padding:7px 0 4px 0;
+      }
+    }
+
     .dropdown-menu.right {
-      padding: 15px;
+      padding: 0;
       padding-bottom: 0px;
       left: auto;
       right: 0px;

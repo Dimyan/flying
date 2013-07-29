@@ -2,29 +2,22 @@
 
 .page-header
   %h1 Авторизация
-= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: 'form-horizontal'}) do |f|
-  -#= devise_error_messages!
-  .control-group
-    = f.label :email, class: 'control-label'
-    .controls
-      .input-prepend
-        %span.add-on
-          %i.icon-envelope
-        = f.email_field :email, :autofocus => true
-  .control-group
-    = f.label :password, class: 'control-label'
-    .controls
-      .input-prepend
-        %span.add-on
-          %i.icon-lock
-        = f.password_field :password
-  .control-group
-    .controls
-      - if devise_mapping.rememberable?
-        = f.check_box :remember_me
-        = f.label :remember_me
-      .actions
-        = f.submit 'Войти', class: "btn btn-primary"
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: 'form-horizontal'}) do |f|
+  = f.input :email, :wrapper => :prepend do
+    %span.add-on
+      %i.icon-envelope
+    = f.input_field :email, :type => 'email', :autofocus => true, :pattern => '.*'
+
+  = f.input :password, :wrapper => :prepend do
+    %span.add-on
+      %i.icon-lock
+    = f.input_field :password, :type => 'password'
+
+  = f.input :form_actions, :label => false do
+    = f.button :submit, 'Войти', :class => 'btn-primary'
+    .remember_me
+      = f.input_field :remember_me, :as => :boolean, :label => false, :inline_label => true if devise_mapping.rememberable?
+
   .control-group
     .controls
-      = render "devise/shared/links"
+      = render 'devise/shared/links'
