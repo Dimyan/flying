@@ -1,0 +1,33 @@
+= simple_form_for user_session_path, :html => {:id => "loginForm"} do |f|
+  %fieldset#body
+    = f.input :email, :label => false, :wrapper => :prepend do
+      %span.add-on
+        %i.icon-envelope
+      = f.input_field :email, :type => "email", :placeholder => "E-mail", :autofocus => true, :pattern => ".*"
+
+    = f.input :password, :label => false, :wrapper => :prepend do
+      %span.add-on
+        %i.icon-lock
+      = f.input_field :password, :placeholder => "Пароль", :type => "password"
+
+    = f.input :form_actions, :label => false do
+      = f.button :submit, "Войти", :class => "btn-primary"
+      .remember_me
+        = f.input_field :remember_me, :as => :boolean, :label => false, :inline_label => true if devise_mapping.rememberable?
+  %span#forgot_psw
+    = link_to "Напомнить пароль", new_password_path('user')
+
+  /
+    = form_tag user_session_path do
+      .input-prepend
+        %span.add-on
+          %i.icon-envelope
+        = email_field_tag 'user[email]',nil,{:placeholder => "E-mail"}
+      .input-prepend
+        %span.add-on
+          %i.icon-lock
+        = password_field_tag 'user[password]',nil,{:placeholder => "Пароль"}
+      = check_box_tag 'user[remember_me]'
+      = label_tag 'user[remember_me]', 'Запомнить меня'
+      = submit_tag 'Войти', class: "btn btn-primary"
+      = link_to "Напомнить пароль", new_password_path('user')
